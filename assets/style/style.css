@@ -1,6 +1,11 @@
+@font-face {
+    font-family: "Montserrat"; /* Имя шрифта */
+    src: url(../fonts/Montserrat-Regular.ttf); /* Путь к файлу со шрифтом */
+}
+
 body {
     margin: 0;
-    font-family: "Trebuchet MS";
+    font-family: "Montserrat";
 }
 
 .hero {
@@ -11,20 +16,55 @@ body {
     max-width: 100%;
     opacity: 1;
     transition: .3s;
+    z-index: 1;
 }
+
+.btn {
+    height: 60px;
+    width: 140px;
+    background-color: black;
+    color:  #a19d9c;
+    border: 0;
+    margin-left: 20px;
+    font-family: "Montserrat";
+}
+
+.btn1 {
+    font-size: 12px;
+}
+
+.btn:hover {
+    border: 1px solid white;
+    color: white;
+    transition: .3s;
+}
+
 
 .hero.-invisible {
     opacity: 0;
 }
 
-.circle {
+.bubble {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     background-color: #a19d9c;
-    height: 200px;
+    height: 60px;
     width: 200px;
-    border-radius: 50%;
+    border-radius: 17%;
+    border-top-left-radius: 0;
+    z-index: 2;
+    margin-top: 430px;
+    margin-left: 140px;
+    opacity: 0;
+    transition: .3s;
+    color: black;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.bubble.-visible{
+    opacity: 1;
 }
 
 .circle h1 {
@@ -36,9 +76,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 590px;
+    width: 600px;
+    height: 250px;
     min-height: 250px;
     padding: 20px;
-    margin-top: 150px;
+    margin-top: 340px;
     background-color: #a19d9c;
 }
