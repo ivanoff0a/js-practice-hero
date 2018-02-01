@@ -1,15 +1,26 @@
 $(document).ready(function() {
 
-    var heroSpeech = "Hi, hope you're having a nice day!";
-    
-    $(".js-showHide").click(function() {
-        $(".hero").toggleClass("-invisible");
-    });
     $(".js-hello").click(function() {
-        $(".bubble").toggleClass("-visible");
+        // var inputText = $(".js-text").val();
+
+        // if (inputText === "") {
+        //     showBubble("There is nothing in here!");
+
+        // } else {
+        //     showBubble(inputText);
+
+        // }
+        showBubble($(".js-text1").val() + $(".js-text2").val());
     });
-    $(".js-hello").click(function() {
-        $(".bubble").text(heroSpeech);
-    });
+
+    function showBubble(text) {
+        $(".bubble").text(text);
+        $(".bubble").addClass("-visible");
+
+        setTimeout(function() {
+            $(".bubble").removeClass("-visible");
+        }, 2000);
+    }
+
 });
 

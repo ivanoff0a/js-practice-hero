@@ -20,13 +20,15 @@ body {
 }
 
 .btn {
-    height: 60px;
+    height: 30px;
     width: 140px;
     background-color: black;
     color:  #a19d9c;
     border: 0;
     margin-left: 20px;
     font-family: "Montserrat";
+    outline: none;
+    margin-top: 20px;
 }
 
 .btn1 {
@@ -39,8 +41,22 @@ body {
     transition: .3s;
 }
 
+input {
+    height: 30px;
+    width: 200px;
+    outline: none;
+    background-color: black;
+    color:  #a19d9c;
+    border: 0;
+    padding-left: 6px;
+    margin-left: 20px;
+}
 
 .hero.-invisible {
+    opacity: 0;
+}
+
+.bubble.-invisible {
     opacity: 0;
 }
 
@@ -80,6 +96,6 @@ body {
     height: 250px;
     min-height: 250px;
     padding: 20px;
-    margin-top: 340px;
+    margin-top: 280px;
     background-color: #a19d9c;
 }
