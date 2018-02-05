@@ -1,38 +1,61 @@
 $(document).ready(function() {
 
-    $(".js-hello").click(function() {
-        // var inputText = $(".js-text").val();
+    $(".js-plus").click(function() {
+        showBubble(Number(getFirstWord()) + Number(getSecondWord()));
+    });
 
-        // if (inputText === "") {
-        //     showBubble("There is nothing in here!");
+    $(".js-minus").click(function() {
+        showBubble(Number(getFirstWord()) - Number(getSecondWord()));
+    });
 
-        // } else {
-        //     showBubble(inputText);
+    $(".js-multiply").click(function() {
+        showBubble(Number(getFirstWord()) * Number(getSecondWord()));
+    });
 
-        // }
-        // showBubble($(".js-text1").val() + $(".js-text2").val());
-        
-        $(".js-hello").click( function () { // Событие нажатия на кнопку "Расчёт"
-		var action = $(".sign").val(); // Получаем значение действия, которое нужно выполнить
-		var first = $(".js-text1").val() * 1; // Переменная первого числа
-		var second = $(".js-text2").val() * 1; // Переменная второго числа
-		var result; // Переменная результата
-		if (action == '+') { // Если действие - сложение
-			result = first + second; //  складываем
-		}
-		else if (action == '-'){ // Если действие вычитание
-			result = first - second; // вычитаем
-		}
-		else if (action == '*'){ // Если действие умножение
-			result = first * second; // умножаем
-		}
-		else if (action == '/'){ // Если действие деления
-			result = first / second; // делим
-		}
-		$(".js-result").val(result); // записываем результат
-		// showBubble($(".bubble").val(result));
-		});
-   	});
+    $(".js-divide").click(function() {
+        if (checkInputData().isNumber) {
+            showBubble(Number(getFirstWord()) / Number(getSecondWord()));
+        } else {
+            if (checkInputData().isEmpty) {
+                showBubble("Nothing in here");
+            } else {
+                showBubble(getFirstWord() + " " + getSecondWord());
+            }
+        }
+    });
+
+    // =================================================================
+    // =================================================================
+
+    function checkInputData() {
+        // если буквы или пусто, то вывод пиши цифры
+        // иначе
+        // проведи операцию
+        if ($.isNumeric(getFirstWord()) && $.isNumeric(getFirstWord())) {
+            return {
+                isNumber: true
+            };
+        } else if (getFirstWord() === "" && getSecondWord() === "") {
+            return {
+                isNumber: false,
+                isEmpty: true
+            };
+        } else {
+            return {
+                isNumber: false,
+                isEmpty: false
+            };
+        }
+    }
+
+    function getFirstWord() {
+        return $(".js-text1").val();
+    }
+
+
+    function getSecondWord() {
+        return $(".js-text2").val();
+    }
 
     function showBubble(text) {
         $(".bubble").text(text);
