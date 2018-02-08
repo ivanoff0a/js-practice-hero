@@ -1,20 +1,8 @@
 $(document).ready(function() {
 
     $(".js-plus").click(function() {
-        showBubble(Number(getFirstWord()) + Number(getSecondWord()));
-    });
-
-    $(".js-minus").click(function() {
-        showBubble(Number(getFirstWord()) - Number(getSecondWord()));
-    });
-
-    $(".js-multiply").click(function() {
-        showBubble(Number(getFirstWord()) * Number(getSecondWord()));
-    });
-
-    $(".js-divide").click(function() {
         if (checkInputData().isNumber) {
-            showBubble(Number(getFirstWord()) / Number(getSecondWord()));
+            showBubble(Number(getFirstWord()) + Number(getSecondWord()));
         } else {
             if (checkInputData().isEmpty) {
                 showBubble("Nothing in here");
@@ -22,6 +10,50 @@ $(document).ready(function() {
                 showBubble(getFirstWord() + " " + getSecondWord());
             }
         }
+    });
+
+    $(".js-minus").click(function() {
+        if (checkInputData().isNumber) {
+            showBubble(Number(getFirstWord()) - Number(getSecondWord()));
+        } else {
+            if (checkInputData().isEmpty) {
+                showBubble("Nothing in here");
+            } else {
+                showBubble(getFirstWord() + " " + getSecondWord());
+            }
+        }
+    });
+
+    $(".js-multiply").click(function() {
+        if (checkInputData().isNumber) {
+            showBubble(Number(getFirstWord()) * Number(getSecondWord()));
+        } else {
+            if (checkInputData().isEmpty) {
+                showBubble("Nothing in here");
+            } else {
+                showBubble(getFirstWord() + " " + getSecondWord());
+            }
+        }
+    });
+
+    $(".js-divide").click(function() {
+        if (checkInputData().isNumber) {
+            showBubble(Number(getFirstWord()) / Number(getSecondWord()));    
+        } else {
+            if (checkInputData().isEmpty) {
+                showBubble("Nothing in here");
+            } else {
+                showBubble(getFirstWord() + " " + getSecondWord());
+            }
+
+        	// } else if (checkInputData().isNumeric(false)){
+         //        showBubble("Use numbers instead letters!");
+         //    }
+        }
+
+		if(Number(getSecondWord() === 0)) {
+        	showBubble("What's wrong with you?");
+   		}
     });
 
     // =================================================================
