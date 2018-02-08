@@ -31,8 +31,43 @@ body {
     margin-top: 20px;
 }
 
-
 .btn:hover {
+    border: 1px solid white;
+    color: white;
+    transition: .3s;
+}
+
+.js-object {
+    width: 200px;
+    height: 30px;
+    background-color: black;
+    color:  #a19d9c;
+    border: 0;
+    margin-left: 20px;
+    font-family: "Montserrat";
+    outline: none;
+    margin-top: 20px;
+}
+
+.js-object:hover {
+    border: 1px solid white;
+    color: white;
+    transition: .3s;
+}
+
+.js-array{
+    width: 200px;
+    height: 30px;
+    background-color: black;
+    color:  #a19d9c;
+    border: 0;
+    margin-left: 20px;
+    font-family: "Montserrat";
+    outline: none;
+    margin-top: 20px;
+}
+
+.js-array:hover {
     border: 1px solid white;
     color: white;
     transition: .3s;
@@ -65,7 +100,7 @@ input {
     transform: translateX(-50%);
     background-color: #a19d9c;
     height: 60px;
-    width: 200px;
+    width: 220px;
     border-radius: 17%;
     border-top-left-radius: 0;
     z-index: 2;
@@ -97,4 +132,23 @@ input {
     padding: 20px;
     margin-top: 825px;
     background-color: #a19d9c;
+}
+
+.massive-panel {
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background-color: #a19d9c;
+    padding: 20px;
+}
+
+.test-array {
+    display: inline-block;
+}
+
+.bubble-test {
+    border: 1px solid black;
+    padding: 5px;
 }
