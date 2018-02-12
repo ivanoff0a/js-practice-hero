@@ -18,7 +18,22 @@ $(document).ready(function() {
         }
     };
 
-    console.log(hero);
+    $(".js-object").click(function() {
+        showBubbleWithBlock('<div class="bubble-test"> Janseh Onfroy ' + hero.name + '!</div>');
+    });
+
+    let songs = [" Jocelyn Flores", " Red Light", " $aUcE", " Roll In Peace"];
+
+    $(".js-array").click(function() {
+        songs.push(getSecondWord());
+        // showBubble(songs);
+        append('<div class="test-array">' + getSecondWord() + '</div>');
+    });
+
+    for (let i = 0; i <songs.length; i++) {
+        $(".massive-panel").append('<div class="test-array">' + songs[i] + '</div>')
+    };
+
 
     $(".js-plus").click(function() {
         if (checkInputData().isNumber) {
@@ -72,11 +87,6 @@ $(document).ready(function() {
         }
      });
 
-    $(".js-object").click(function() {
-        console.log(hero.name);
-        showBubbleWithBlock('<div class="bubble-test"> Janseh Onfroy ' + hero.name + '!</div>');
-    });
-
     // =================================================================
     // =================================================================
     function showNotNumericData() {
@@ -127,23 +137,12 @@ $(document).ready(function() {
     }
 
     function showBubbleWithBlock(block) {
-        $(".bubble").append(block);
-        $(".bubble").addClass("-visible");
+	    $(".bubble").append(block);
+	    $(".bubble").addClass("-visible");
 
-        setTimeout(function() {
-            $(".bubble").removeClass("-visible");
-        }, 2000);
+	    setTimeout(function() {
+	        $(".bubble").removeClass("-visible");
+	    }, 2000);
     }
-
-    let movies = ["apple", "orange", "banana", "door"];
-
-    $(".js-array").click(function() {
-        movies.push(getSecondWord());
-        showBubble(movies);
-    });
-
-    for (let i = 0; i < movies.length; i++) {
-        $(".massive-panel").append('<div class="test-array">' + movies[i] + '</div>')
-    };
 });
 
