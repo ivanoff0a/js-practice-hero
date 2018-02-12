@@ -27,7 +27,7 @@ $(document).ready(function() {
     $(".js-array").click(function() {
         songs.push(getSecondWord());
         // showBubble(songs);
-        append('<div class="test-array">' + getSecondWord() + '</div>');
+        $(".massive-panel").append('<div class="test-array">' + getSecondWord() + '</div>');
     });
 
     for (let i = 0; i <songs.length; i++) {
@@ -89,6 +89,7 @@ $(document).ready(function() {
 
     // =================================================================
     // =================================================================
+
     function showNotNumericData() {
         if (checkInputData().isEmpty) {
                 showBubble("Nothing in here");
