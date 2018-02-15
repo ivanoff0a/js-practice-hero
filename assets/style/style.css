@@ -138,7 +138,7 @@ input {
     top: 20px;
     left: 20px;
     position: absolute;
-    width: 200px;
+    min-width: 150px;
     height: auto;
     background-color: #a19d9c;
     padding: 10px;
@@ -147,12 +147,23 @@ input {
 .test-array {
     background-color: black;
     color:  #a19d9c;
-    height: 30px;
-    width: 120px;
+    min-height: 30px auto;
+    min-width: 120px;
     padding-left: 5px;
+    padding-right: 5px;
     padding-top: 10px;
+    padding-bottom: 5px;
     margin-top: 5px;
     transition: .3s;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes slidein {
+ from { left: 0; }
+ to { left: 200px; }
 }
 
 .bubble-test {
@@ -160,3 +171,17 @@ input {
     padding: 5px;
     transition: .3s;
 }
+
+/*@keyframes move {
+    from {
+        left: -50px; 
+    }
+    to { 
+        left: 50px;
+    }
+}
+
+.test-array {
+    animation: 1s move;
+}
+*/

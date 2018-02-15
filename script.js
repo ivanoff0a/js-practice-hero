@@ -25,8 +25,11 @@ $(document).ready(function() {
     let songs = [" Jocelyn Flores", " Red Light", " $aUcE", " Roll In Peace"];
 
     $(".js-array").click(function() {
+	    	if(checkInputData().isEmpty) {
+	    		showBubble("Nothing In Here!");
+	    		songs.unpush(getSecondWord());
+	    	}
         songs.push(getSecondWord());
-        // showBubble(songs);
         $(".massive-panel").append('<div class="test-array">' + getSecondWord() + '</div>');
     });
 
